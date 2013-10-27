@@ -1,19 +1,9 @@
-/**
- * Todo
- *
- * @module      :: Model
- * @description :: A short summary of how this model works and what it represents.
- * @docs		:: http://sailsjs.org/#!documentation/models
- */
-
-module.exports = {
-
+var Todo: {
   attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
+  	text : 'STRING',
+  	createDate: 'DATE',
+  	isDone : 'BOOLEAN',
+  	ownerUser:'STRING'
   }
-
 };
+module.exports = Todo;

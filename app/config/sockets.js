@@ -1,78 +1,16 @@
-/**
- * Socket Configuration
- *
- * These configuration options provide transparent access to Sails' encapsulated
- * pubsub/socket server for complete customizability.
- *
- * For more information on using Sails with Sockets, check out:
- * http://sailsjs.org/#documentation
- */
-
 module.exports.sockets = {
-
-  // This custom onConnect function will be run each time AFTER a new socket connects
-  // (To control whether a socket is allowed to connect, check out `authorization` config.)
-  // Keep in mind that Sails' RESTful simulation for sockets 
-  // mixes in socket.io events for your routes and blueprints automatically.
   onConnect: function(session, socket) {
-
-    // By default: do nothing
-    // This is a good place to subscribe a new socket to a room, inform other users that
-    // someone new has come online, or any other custom socket.io logic
   },
 
-  // This custom onDisconnect function will be run each time a socket disconnects
   onDisconnect: function(session, socket) {
-
-    // By default: do nothing
-    // This is a good place to broadcast a disconnect message, or any other custom socket.io logic
   },
-
-
-
-  // `transports`
-  //
-  // A array of allowed transport methods which the clients will try to use.
-  // The flashsocket transport is disabled by default
-  // You can enable flashsockets by adding 'flashsocket' to this list:
   transports: [
   'websocket',
   'htmlfile',
   'xhr-polling',
   'jsonp-polling'
   ],
-
-
-
-
-  // Use this option to set the datastore socket.io will use to manage rooms/sockets/subscriptions:
-  // default: memory
   adapter: 'memory',
-
-  
-  // Node.js (and consequently Sails.js) apps scale horizontally.
-  // It's a powerful, efficient approach, but it involves a tiny bit of planning.
-  // At scale, you'll want to be able to copy your app onto multiple Sails.js servers
-  // and throw them behind a load balancer.
-  //
-  // One of the big challenges of scaling an application is that these sorts of clustered 
-  // deployments cannot share memory, since they are on physically different machines.
-  // On top of that, there is no guarantee that a user will "stick" with the same server between
-  // requests (whether HTTP or sockets), since the load balancer will route each request to the 
-  // Sails server with the most available resources. However that means that all room/pubsub/socket
-  // processing and shared memory has to be offloaded to a shared, remote messaging queue (usually Redis)
-  //
-  // Luckily, Socket.io (and consequently Sails.js) apps support Redis for sockets by default.
-  // To enable a remote redis pubsub server: 
-  // adapter: 'redis',
-  // host: '127.0.0.1',
-  // port: 6379,
-  // db: 'sails',
-  // pass: '<redis auth password>'
-  // Worth mentioning is that, if `adapter` config is `redis`, 
-  // but host/port is left unset, Sails will try to connect to redis 
-  // running on localhost via port 6379 
-
 
 
   // `authorization`
