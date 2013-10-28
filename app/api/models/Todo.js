@@ -1,4 +1,4 @@
-var Todo: {
+var Todo = {
   attributes: {
   	text : 'STRING',
   	createDate: 'DATE',

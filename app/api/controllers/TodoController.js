@@ -4,8 +4,7 @@ var TodoController = {
 	},
 	destroy:function(req,res){
 
-	},
-	
+	}
 };
 
 module.exports = TodoController;
