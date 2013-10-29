@@ -1,14 +1,9 @@
-<!-- Default home page -->
-<link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
-<style>
-    div.clear{clear:both}
-    .clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
-    .container{max-width:997px;margin:0 auto;padding:0 4%}
-    .top-bar{position:relative;padding-top:10px;background-color:#001c20;height:55px}
-</style>
-<div class="top-bar">
-    <div class="container clearfix">
-        <img class="logo" src="images/logo.png" />
-    </div>
+<div data-role="page" id="pageone">
+  <div data-role="content">
+    <h2>How may I help you, sire?</h2>
+    <ul data-role="listview">
+      <li><a href="/todo/all">Show me todo list!</a></li>
+      <li><a href="/notes/all">Show notes!</a></li>
+    </ul>
+  </div>
 </div>
-
