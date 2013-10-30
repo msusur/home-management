@@ -1,9 +1,28 @@
-<div data-role="page" id="pageone">
+<div data-role="page" id="home">
+	<div data-role="header">
+    	<h1>What do you want me to do!</h1>
+  	</div>
   <div data-role="content">
-    <h2>How may I help you, sire?</h2>
     <ul data-role="listview">
-      <li><a href="/todo/all">Show me todo list!</a></li>
-      <li><a href="/notes/all">Show notes!</a></li>
+    	<% _.each(menuItems, function(item){ %>
+    		<li><a href="<%= item.link %>" data-transition="<%= item.transition %>" 
+    				id="<%= item.id %>"><%= item.text %></a></li>		
+		<% }) %>
     </ul>
   </div>
+</div>
+<div id="todo">
+	<div data-role="header">
+		<h1>Welcome To My Homepage</h1>
+		<a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+	</div>
+	<div id="todo-div" data-role="content">
+      <div data-role="fieldcontain">
+      	<label for="todoText">What to do: </label>
+        <input type="text" name="todoText" id="todoText">
+      </div>
+      <input type="submit" data-inline="true" value="Save" id="save-todo">
+      <ul id="todo-list">
+      </ul>
+	</div>
 </div>

@@ -1,14 +1,15 @@
 module.exports.routes = {
-
   '/': {
-    view: 'home/index'
+    controller: 'Home',
+    action: 'index'
   },
   'post /todo/create' : {
     controller: 'Todo',
     action:'create'
   },
-  '/todo/all':{
-    view: 'todo/all'
+  '/todo/list':{
+    controller: 'Todo',
+    action: 'index'
   },
   '/notes/all':{
     view: 'notes/all'
